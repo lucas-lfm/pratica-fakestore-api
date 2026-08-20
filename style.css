@@ -1,0 +1,372 @@
+/* ================================
+   RESET E CONFIGURAÇÕES GERAIS
+================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* ================================
+   CABEÇALHO
+================================ */
+
+header {
+  background-color: #1f2937;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+header p {
+  color: #d1d5db;
+}
+
+/* ================================
+   CONTEÚDO PRINCIPAL
+================================ */
+
+main {
+  width: min(1200px, 95%);
+  margin: 2rem auto;
+
+  display: grid;
+
+  /*
+   * Produtos ocupam mais espaço.
+   * Carrinho ocupa uma coluna lateral.
+   */
+  grid-template-columns: 1fr 320px;
+
+  gap: 2rem;
+
+  align-items: start;
+}
+
+/* ================================
+   SEÇÕES
+================================ */
+
+#products,
+#cart {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+#products h2,
+#cart h2 {
+  margin-bottom: 1.5rem;
+  color: #1f2937;
+}
+
+/* ================================
+   LISTA DE PRODUTOS
+================================ */
+
+#product-list {
+  display: grid;
+
+  /*
+   * Os cards se adaptam automaticamente
+   * ao espaço disponível.
+   */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 1.5rem;
+}
+
+/* ================================
+   CARD DO PRODUTO
+================================ */
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+
+  background-color: #fff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+
+  padding: 1rem;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  /*
+   * Permite que cards com descrições
+   * diferentes mantenham uma estrutura
+   * visual consistente.
+   */
+  height: 100%;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* ================================
+   IMAGEM DO PRODUTO
+================================ */
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+
+  object-fit: contain;
+
+  margin-bottom: 1rem;
+
+  background-color: #fff;
+}
+
+/* ================================
+   TÍTULO DO PRODUTO
+================================ */
+
+.product-card h3 {
+  font-size: 1.1rem;
+
+  color: #1f2937;
+
+  margin-bottom: 0.5rem;
+}
+
+/* ================================
+   DESCRIÇÃO
+================================ */
+
+.product-card .product-description {
+  color: #6b7280;
+
+  font-size: 0.9rem;
+
+  margin-bottom: 0.75rem;
+}
+
+/*
+ * Se futuramente você colocar uma
+ * classe específica no preço, por exemplo:
+ *
+ * <p class="product-price">R$ 100,00</p>
+ *
+ * este estilo já poderá ser utilizado.
+ */
+
+.product-card .product-price {
+  font-size: 1.2rem;
+
+  font-weight: bold;
+
+  color: #16a34a;
+
+  margin-top: auto;
+
+  margin-bottom: 1rem;
+}
+
+/* ================================
+   BOTÃO ADICIONAR AO CARRINHO
+================================ */
+
+.add-to-cart {
+  width: 100%;
+
+  border: none;
+  border-radius: 6px;
+
+  padding: 0.75rem 1rem;
+
+  background-color: #2563eb;
+
+  color: white;
+
+  font-size: 0.95rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.add-to-cart:hover {
+  background-color: #1d4ed8;
+}
+
+.add-to-cart:active {
+  transform: scale(0.98);
+}
+
+/* ================================
+   CARRINHO
+================================ */
+
+#cart {
+  /*
+   * Mantém o carrinho visível durante
+   * a rolagem da página.
+   */
+  position: sticky;
+  top: 1rem;
+}
+
+#cart h2 {
+  border-bottom: 1px solid #e5e7eb;
+
+  padding-bottom: 1rem;
+}
+
+/* ================================
+   ITENS DO CARRINHO
+================================ */
+
+#cart-items {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.75rem;
+
+  margin-bottom: 1.5rem;
+}
+
+/*
+ * Estilo preparado para os elementos
+ * que serão adicionados via JavaScript.
+ *
+ * Exemplo futuro:
+ *
+ * <div class="cart-item">
+ *   <span>Produto</span>
+ *   <span>R$ 100,00</span>
+ * </div>
+ */
+
+.cart-item {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 1rem;
+
+  padding: 0.75rem;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  font-size: 0.9rem;
+}
+
+/* ================================
+   TOTAL DO CARRINHO
+================================ */
+
+#cart > p {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding-top: 1rem;
+
+  border-top: 2px solid #e5e7eb;
+
+  font-size: 1.1rem;
+
+  font-weight: bold;
+}
+
+#cart-total {
+  color: #16a34a;
+}
+
+/* ================================
+   RODAPÉ
+================================ */
+
+footer {
+  margin-top: 3rem;
+
+  padding: 1.5rem;
+
+  background-color: #1f2937;
+
+  color: #d1d5db;
+
+  text-align: center;
+
+  font-size: 0.9rem;
+}
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+
+/*
+ * Em telas menores, produtos e carrinho
+ * passam a ficar um abaixo do outro.
+ */
+
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  #cart {
+    position: static;
+  }
+
+  #product-list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/*
+ * Celulares pequenos
+ */
+
+@media (max-width: 480px) {
+  header {
+    padding: 1.5rem 1rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  main {
+    width: 92%;
+    margin: 1rem auto;
+  }
+
+  #products,
+  #cart {
+    padding: 1rem;
+  }
+
+  #product-list {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card img {
+    height: 180px;
+  }
+}
