@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Teste - API FakeStore</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="./main.js" defer></script>
+    <script src="./main.js" defer type="module"></script>
   </head>
   <body>
     <header>
@@ -16,23 +16,7 @@
     <main>
       <section id="products">
         <h2>Produtos em destaque</h2>
-        <div id="product-list">
-          <article class="product-card">
-            <img src="https://picsum.photos/200" alt="Produto 1" />
-            <h3>Produto 1</h3>
-            <p class="product-description">Descrição do produto 1.</p>
-            <p class="product-price">R$ 100.00</p>
-            <button class="add-to-cart">Adicionar ao Carrinho</button>
-          </article>
-
-          <article class="product-card">
-            <img src="https://picsum.photos/200" alt="Produto 2" />
-            <h3>Produto 2</h3>
-            <p class="product-description">Descrição do produto 2.</p>
-            <p class="product-price">R$ 200.00</p>
-            <button class="add-to-cart">Adicionar ao Carrinho</button>
-          </article>
-        </div>
+        <div id="product-list"></div>
       </section>
 
       <section id="cart">
